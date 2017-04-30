@@ -4,8 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app/server.js",
+    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha app/**/*.test.js",
+    "test-watch": "nodemon --exec 'npm test'"
+  },
+  "engines": {
+    "node": "7.7.4"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.9.6"
+  },
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.3.0",
+    "nodemon": "^1.11.0",
+    "pathfinder-ui": "^1.0.3",
+    "supertest": "^3.0.0"
+  }
 }
